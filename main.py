@@ -1,8 +1,7 @@
-from tkinter.messagebox import showinfo
-from tkinter import filedialog as fd 
 from tkinter import Tk
 from tkinter import ttk
-from tkinter import Label
+import add_file
+import display_file_title
 
 class telos():
     def __init__(self, mainBody) -> None:
@@ -17,21 +16,12 @@ class telos():
         addButton = ttk.Button(mainBody, text = "Add a file", command=self.addFile)
         addButton.grid(row=1)
 
-
     def addFile(self):
-        fileTypes = (("PDF files", '*.pdf'), ("EPUB files", '*.epub'))
-        fileName = fd.askopenfilename(title = "Open a file", initialdir = '~', filetypes = fileTypes)
-        showinfo(title = "Selected files", message=fileName)
-        self.displayFileTitle(fileName)
+        add_file.main(self)
  
 
-    def displayFileTitle(self, name):
-        self.files.append(name)
-        print(self.files)
-        for i in self.files:
-            j = len(self.files)
-            label = Label(self.mainBody, text=i, anchor="w", justify="left", width=100)
-            label.grid(column=1, row=1+j)
+    def displayFileTitle(self):
+        display_file_title.main(self)
     
 
 def main():
