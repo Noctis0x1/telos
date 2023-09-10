@@ -22,8 +22,8 @@ class telos():
 
     def displayFileTitle(self):
         display_file_title.main(self)
-    
 
+        
 def main():
     mainBody = Tk()
     telos(mainBody)
