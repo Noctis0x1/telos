@@ -50,10 +50,11 @@ class FileReaderApp:
         column = label.grid_info()["column"]
         row = label.grid_info()["row"]
 
+
         def on_enter(event):
             # label.place_configure(z)
-            button = tk.Button(self.root, text="But")
-            button.grid(column=column, row=row)
+            label = tk.Label(self.root, text=name)
+            label.grid(column=column, row=row)
             print(column,row)
             label.grid_forget()
 
